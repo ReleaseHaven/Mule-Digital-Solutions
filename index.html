@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mule Digital Solutions – Hjemmesider & Google til lokale butikker i København</title>
+  <meta name="description" content="Vi bygger hjemmesider og styrer Google Business Profiles for lokale butikker i København. Klar på få dage. Ring 21 96 28 66 for en uforpligtende snak." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="Mule Digital Solutions – Hjemmesider & Google til lokale butikker" />
+  <meta property="og:description" content="Vi bygger hjemmesider og styrer Google-profiler for lokale butikker i København – så dine kunder finder dig, ikke konkurrenten." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="da_DK" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mule Digital Solutions",
+    "description": "Digitalt bureau der bygger hjemmesider og styrer Google Business Profiles for lokale butikker i København.",
+    "telephone": "+4521962866",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "København",
+      "addressCountry": "DK"
+    },
+    "areaServed": "København",
+    "priceRange": "kr 500–2000/md",
+    "vatID": "DK46313844",
+    "url": "https://muledigital.dk"
+  }
+  </script>
+
+  <style>
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #0d1b3e;
+      --white:  #ffffff;
+      --gold:   #c8a96e;
+      --text:   #1a1a2e;
+      --gray-bg:#f8f8f6;
+      --gray-mid:#e8e8e4;
+      --font:   'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ─── Utility ─── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Animations ─── */
+    @media (prefers-reduced-motion: no-preference) {
+      .fade-up {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-up.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .fade-up.delay-1 { transition-delay: 0.1s; }
+      .fade-up.delay-2 { transition-delay: 0.2s; }
+      .fade-up.delay-3 { transition-delay: 0.3s; }
+      .fade-up.delay-4 { transition-delay: 0.4s; }
+
+      .hero-animate {
+        opacity: 0;
+        transform: translateY(24px);
+        animation: heroIn 0.8s ease forwards;
+      }
+      .hero-animate.delay-1 { animation-delay: 0.15s; }
+      .hero-animate.delay-2 { animation-delay: 0.3s; }
+      .hero-animate.delay-3 { animation-delay: 0.45s; }
+      .hero-animate.delay-4 { animation-delay: 0.6s; }
+
+      @keyframes heroIn {
+        to { opacity: 1; transform: translateY(0); }
+      }
+    }
+
+    /* ─── Navigation ─── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--navy);
+      border-bottom: 1px solid rgba(200,169,110,0.15);
+      transition: box-shadow 0.3s;
+    }
+    .nav.scrolled {
+      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--white);
+    }
+    .nav-logo svg {
+      width: 32px;
+      height: 32px;
+      flex-shrink: 0;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      font-size: 0.88rem;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .btn-nav-cta {
+      background: var(--navy);
+      border: 1.5px solid var(--gold);
+      color: var(--gold) !important;
+      padding: 9px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      transition: background 0.2s, color 0.2s !important;
+    }
+    .btn-nav-cta:hover {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+    }
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+    .nav-mobile {
+      display: none;
+      background: var(--navy);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 16px 24px 20px;
+    }
+    .nav-mobile.open { display: block; }
+    .nav-mobile a {
+      display: block;
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .nav-mobile a:last-child { border-bottom: none; }
+    .nav-mobile .btn-nav-cta {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 11px 24px;
+    }
+
+    /* ─── Buttons ─── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 7px;
+      font-family: var(--font);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s;
+      line-height: 1;
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .btn-primary:hover {
+      background: #162d6b;
+      border-color: #162d6b;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.5);
+    }
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255,255,255,0.08);
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+    .btn-gold:hover {
+      background: #b8954e;
+      border-color: #b8954e;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 152px 0 100px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .hero-bg svg {
+      width: 100%;
+      height: 100%;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(200,169,110,0.15);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(200,169,110,0.3);
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 4rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.12;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .hero h1 .gold { color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(1rem, 2.2vw, 1.2rem);
+      color: rgba(255,255,255,0.72);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 44px;
+      line-height: 1.65;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      opacity: 0.4;
+    }
+    .hero-scroll-hint span {
+      font-size: 0.7rem;
+      color: var(--white);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .scroll-arrow {
+      width: 20px;
+      height: 20px;
+      border-right: 2px solid var(--white);
+      border-bottom: 2px solid var(--white);
+      transform: rotate(45deg);
+      animation: scrollBounce 1.5s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50% { transform: rotate(45deg) translateY(5px); }
+    }
+
+    /* ─── Social Proof Strip ─── */
+    .strip {
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-mid);
+      padding: 36px 0;
+    }
+    .strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .strip-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888;
+    }
+    .strip-stats {
+      display: flex;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .strip-stat {
+      text-align: center;
+    }
+    .strip-stat strong {
+      display: block;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .strip-stat span {
+      font-size: 0.8rem;
+      color: #777;
+      font-weight: 400;
+    }
+    .strip-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--gray-mid);
+    }
+
+    /* ─── Section common ─── */
+    .section {
+      padding: 96px 0;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 560px;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    /* ─── How it works ─── */
+    .how { background: var(--gray-bg); }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+    }
+    .step {
+      position: relative;
+      padding: 36px 32px 40px;
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--gray-mid);
+    }
+    .step-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 20px;
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+    .step h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .step p {
+      font-size: 0.93rem;
+      color: #666;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .step-connector {
+      position: absolute;
+      right: -24px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .step-connector svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gold);
+    }
+
+    /* ─── Pricing ─── */
+    .pricing { background: var(--white); }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .card {
+      border-radius: 14px;
+      padding: 40px 32px 44px;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.10);
+    }
+    .card-light {
+      background: var(--white);
+      border: 2px solid var(--navy);
+    }
+    .card-dark {
+      background: var(--navy);
+      border: 2px solid var(--navy);
+    }
+    .card-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .card-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .card-light .card-name { color: var(--gold); }
+    .card-dark .card-name { color: var(--gold); }
+
+    .card-price {
+      margin-bottom: 6px;
+    }
+    .card-price .amount {
+      font-size: 2.4rem;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .card-light .amount { color: var(--navy); }
+    .card-dark .amount { color: var(--white); }
+    .card-price .period {
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+    .card-light .period { color: #777; }
+    .card-dark .period { color: rgba(255,255,255,0.6); }
+
+    .card-setup {
+      font-size: 0.83rem;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+    .card-light .card-setup { color: #888; }
+    .card-dark .card-setup { color: rgba(255,255,255,0.55); }
+
+    .card-divider {
+      height: 1px;
+      margin-bottom: 28px;
+    }
+    .card-light .card-divider { background: var(--gray-mid); }
+    .card-dark .card-divider { background: rgba(255,255,255,0.12); }
+
+    .card-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 36px;
+    }
+    .card-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      font-weight: 400;
+    }
+    .card-light .card-features li { color: var(--text); }
+    .card-dark .card-features li { color: rgba(255,255,255,0.85); }
+    .card-features li svg {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+    }
+    .card-light .card-features li svg { color: var(--gold); }
+    .card-dark .card-features li svg { color: var(--gold); }
+
+    .card-cta {
+      width: 100%;
+      text-align: center;
+    }
+    .card-light .btn-primary { background: var(--navy); }
+    .card-dark .btn-gold { width: 100%; }
+
+    /* ─── Features ─── */
+    .features { background: var(--gray-bg); }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .feature-box {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 36px 32px;
+      border: 1px solid var(--gray-mid);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .feature-box:hover {
+      border-color: var(--gold);
+      box-shadow: 0 8px 32px rgba(200,169,110,0.10);
+    }
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(200,169,110,0.12);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .feature-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--gold);
+    }
+    .feature-box h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .feature-box p {
+      font-size: 0.92rem;
+      color: #666;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ─── Contact ─── */
+    .contact {
+      background: var(--navy);
+      padding: 100px 0;
+      text-align: center;
+    }
+    .contact .section-label { color: var(--gold); }
+    .contact .section-title { color: var(--white); margin-bottom: 20px; }
+    .contact-sub {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      max-width: 520px;
+      margin: 0 auto 48px;
+      font-weight: 300;
+      line-height: 1.65;
+    }
+    .contact-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .contact-hint {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      background: #08122a;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-brand svg { width: 28px; height: 28px; }
+    .footer-brand-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.06em;
+    }
+    .footer-info {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.8;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.25);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 900px) {
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .step-connector { display: none; }
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      .strip-inner {
+        justify-content: center;
+        text-align: center;
+      }
+      .strip-divider { display: none; }
+      .strip-stats { justify-content: center; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .hero { padding: 120px 0 80px; min-height: auto; }
+      .section { padding: 72px 0; }
+      .contact { padding: 72px 0; }
+    }
+    @media (max-width: 480px) {
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { width: 100%; }
+      .contact-buttons { flex-direction: column; align-items: center; }
+      .contact-buttons .btn { width: 100%; max-width: 320px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── Navigation ─── -->
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="nav-logo" aria-label="Mule Digital Solutions">
+        <!-- Mule/donkey SVG icon -->
+        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <ellipse cx="28" cy="30" rx="14" ry="9" fill="#c8a96e" opacity="0.18"/>
+          <path d="M8 34 C8 34 10 26 16 24 C16 24 15 19 17 16 C18 14 20 14 21 16 C22 18 20 22 20 22 C24 20 28 20 30 22 C32 24 32 28 30 30 L38 30 C40 30 42 32 42 34 L8 34Z" fill="#c8a96e"/>
+          <ellipse cx="36" cy="30" rx="3" ry="4" fill="#b8954e"/>
+          <path d="M14 22 C12 20 10 18 11 15 C12 13 14 13 15 15" stroke="#c8a96e" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <path d="M17 16 L16 10 C16 9 17 8 18 9 L19 15" stroke="#c8a96e" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <circle cx="14" cy="22" r="2" fill="#0d1b3e"/>
+          <circle cx="14.5" cy="21.5" r="0.7" fill="white"/>
+          <path d="M12 26 L10 34" stroke="#b8954e" stroke-width="2" stroke-linecap="round"/>
+          <path d="M18 30 L17 34" stroke="#b8954e" stroke-width="2" stroke-linecap="round"/>
+          <path d="M25 30 L24 34" stroke="#b8954e" stroke-width="2" stroke-linecap="round"/>
+          <path d="M30 30 L31 34" stroke="#b8954e" stroke-width="2" stroke-linecap="round"/>
+          <path d="M38 26 C40 24 42 22 40 20 C38 18 36 20 36 22" stroke="#c8a96e" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </svg>
+        MULE DIGITAL
+      </a>
+      <ul class="nav-links">
+        <li><a href="#how">Sådan fungerer det</a></li>
+        <li><a href="#pricing">Løsninger</a></li>
+        <li><a href="#features">Hvad er inkluderet</a></li>
+        <li><a href="#contact" class="btn-nav-cta">Kontakt os</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#how">Sådan fungerer det</a>
+      <a href="#pricing">Løsninger & priser</a>
+      <a href="#features">Hvad er inkluderet</a>
+      <a href="#contact" class="btn-nav-cta">Kontakt os</a>
+    </div>
+  </nav>
+
+  <!-- ─── Hero ─── -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="grid" x="0" y="0" width="64" height="64" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+            <line x1="64" y1="0" x2="0" y2="64" stroke="rgba(200,169,110,0.06)" stroke-width="1"/>
+            <line x1="0" y1="0" x2="64" y2="64" stroke="rgba(200,169,110,0.03)" stroke-width="0.5"/>
+          </pattern>
+          <radialGradient id="heroGlow" cx="30%" cy="60%" r="60%">
+            <stop offset="0%" stop-color="rgba(200,169,110,0.07)"/>
+            <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+          </radialGradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+        <rect width="100%" height="100%" fill="url(#heroGlow)"/>
+      </svg>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-eyebrow hero-animate">Lokalt digitalt bureau · København</div>
+        <h1 class="hero-animate delay-1">Din forretning fortjener<br /><span class="gold">at blive fundet.</span></h1>
+        <p class="hero-sub hero-animate delay-2">Vi bygger hjemmesider og styrer Google-profiler for lokale butikker i København – så dine kunder finder dig, ikke konkurrenten.</p>
+        <div class="hero-buttons hero-animate delay-3">
+          <a href="#pricing" class="btn btn-gold">Se vores løsninger</a>
+          <a href="#contact" class="btn btn-outline">Kontakt os</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ─── Social Proof Strip ─── -->
+  <section class="strip">
+    <div class="container">
+      <div class="strip-inner">
+        <p class="strip-label fade-up">Betroet af lokale butikker i København</p>
+        <div class="strip-stats">
+          <div class="strip-stat fade-up delay-1">
+            <strong>240+</strong>
+            <span>Leads identificeret</span>
+          </div>
+          <div class="strip-divider fade-up delay-1"></div>
+          <div class="strip-stat fade-up delay-2">
+            <strong>Få dage</strong>
+            <span>Klar til at gå online</span>
+          </div>
+          <div class="strip-divider fade-up delay-2"></div>
+          <div class="strip-stat fade-up delay-3">
+            <strong>100%</strong>
+            <span>Lokal service</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── How It Works ─── -->
+  <section class="section how" id="how">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Processen</p>
+        <h2 class="section-title fade-up delay-1">Simpelt. Hurtigt. Ingen overraskelser.</h2>
+        <p class="section-sub fade-up delay-2">Vi tager hånd om det hele – du slipper for at forstå tekniske detaljer.</p>
+      </div>
+      <div class="steps">
+        <div class="step fade-up delay-1">
+          <div class="step-number">01</div>
+          <h3>Vi bygger din hjemmeside</h3>
+          <p>Vi designer og bygger en professionel hjemmeside skræddersyet til din forretning – med tekst, billeder og det hele. Du behøver ikke løfte en finger.</p>
+          <div class="step-connector" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+        </div>
+        <div class="step fade-up delay-2">
+          <div class="step-number">02</div>
+          <h3>Du ser den færdig – før du betaler noget</h3>
+          <p>Vi viser dig siden, inden du skriver under på noget. Du godkender, foreslår ændringer eller siger nej tak. Ingen risiko, ingen binding.</p>
+          <div class="step-connector" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
+          </div>
+        </div>
+        <div class="step fade-up delay-3">
+          <div class="step-number">03</div>
+          <h3>Vi sætter det hele op og passer det</h3>
+          <p>Siden går live. Vi håndterer hosting, sikkerhed og opdateringer løbende. Har du spørgsmål, er der altid en rigtig person at ringe til.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Pricing ─── -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Vores løsninger</p>
+        <h2 class="section-title fade-up delay-1">Vælg det der passer til din forretning</h2>
+        <p class="section-sub fade-up delay-2">Alle pakker inkluderer en engangspris på 8.000 kr. til opsætning. Ingen skjulte gebyrer.</p>
+      </div>
+      <div class="pricing-grid">
+
+        <!-- Starter -->
+        <div class="card card-light fade-up delay-1">
+          <p class="card-name">Starter</p>
+          <div class="card-price">
+            <span class="amount">500 kr.</span><span class="period">/md</span>
+          </div>
+          <p class="card-setup">+ 8.000 kr. opsætning</p>
+          <div class="card-divider"></div>
+          <ul class="card-features">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Professionel hjemmeside
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Hosting inkluderet
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              SSL-certifikat (sikker side)
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Teknisk vedligeholdelse
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-primary card-cta">Kom i gang</a>
+        </div>
+
+        <!-- Synlighed -->
+        <div class="card card-light fade-up delay-2">
+          <p class="card-name">Synlighed</p>
+          <div class="card-price">
+            <span class="amount">1.200 kr.</span><span class="period">/md</span>
+          </div>
+          <p class="card-setup">+ 8.000 kr. opsætning</p>
+          <div class="card-divider"></div>
+          <ul class="card-features">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Alt fra Starter
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Google Business Profile styring
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              TapNFC QR-stander til Google Reviews
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Automatiske AI-svar på anmeldelser
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-primary card-cta">Kom i gang</a>
+        </div>
+
+        <!-- Fuld Digital Pakke -->
+        <div class="card card-dark fade-up delay-3">
+          <div class="card-badge">Mest populær</div>
+          <p class="card-name">Fuld Digital Pakke</p>
+          <div class="card-price">
+            <span class="amount" style="color:var(--white)">2.000 kr.</span><span class="period">/md</span>
+          </div>
+          <p class="card-setup">+ 8.000 kr. opsætning</p>
+          <div class="card-divider"></div>
+          <ul class="card-features">
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Alt fra Synlighed
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              SEO-optimering
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Månedlig trafikrapport
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Email marketing til dine kunder
+            </li>
+          </ul>
+          <a href="#contact" class="btn btn-gold card-cta">Kom i gang</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Features ─── -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label fade-up">Hvad er inkluderet</p>
+        <h2 class="section-title fade-up delay-1">Alt hvad din forretning har brug for</h2>
+        <p class="section-sub fade-up delay-2">Vi leverer mere end bare en hjemmeside – vi er din digitale partner.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-box fade-up delay-1">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3>Hjemmeside lavet til jer</h3>
+          <p>Ingen skabeloner. Vi laver en side der matcher din forretning, dine åbningstider og din tone of voice. Klar til at konvertere besøgende til kunder.</p>
+        </div>
+
+        <div class="feature-box fade-up delay-2">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+          </div>
+          <h3>Google Reviews på autopilot</h3>
+          <p>Vores NFC-stander gør det nemt for kunder at give dig en anmeldelse. AI-teknologi svarer automatisk professionelt – uden du løfter en finger.</p>
+        </div>
+
+        <div class="feature-box fade-up delay-3">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+            </svg>
+          </div>
+          <h3>Én kontaktperson altid</h3>
+          <p>Du har altid én fast person at ringe til. Ingen callcentre, ingen ventetider. Vi er et lille bureau der prioriterer personlig service.</p>
+        </div>
+
+        <div class="feature-box fade-up delay-4">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Klar på få dage</h3>
+          <p>Vi arbejder hurtigt. Fra første samtale til din side er live går der typisk kun få dage. Du godkender undervejs – og betaler ikke før du er tilfreds.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Contact ─── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <p class="section-label fade-up">Kom i gang</p>
+      <h2 class="section-title fade-up delay-1">Klar til at komme online?</h2>
+      <p class="contact-sub fade-up delay-2">Ring eller skriv – vi tager en uforpligtende snak om hvad vi kan gøre for din forretning.</p>
+      <div class="contact-buttons fade-up delay-3">
+        <a href="tel:+4521962866" class="btn btn-gold">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.22v2.7z"/></svg>
+          Ring: 21 96 28 66
+        </a>
+        <a href="mailto:hej@muledigital.dk" class="btn btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Send en email
+        </a>
+      </div>
+      <p class="contact-hint fade-up delay-4">Eller find os på Google Maps i København</p>
+    </div>
+  </section>
+
+  <!-- ─── Footer ─── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 34 C8 34 10 26 16 24 C16 24 15 19 17 16 C18 14 20 14 21 16 C22 18 20 22 20 22 C24 20 28 20 30 22 C32 24 32 28 30 30 L38 30 C40 30 42 32 42 34 L8 34Z" fill="#c8a96e" opacity="0.7"/>
+            <path d="M17 16 L16 10 C16 9 17 8 18 9 L19 15" stroke="#c8a96e" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="14" cy="22" r="2" fill="#c8a96e" opacity="0.5"/>
+          </svg>
+          <span class="footer-brand-name">MULE DIGITAL</span>
+        </div>
+        <div class="footer-info">
+          <div>CVR: 46313844 &nbsp;·&nbsp; Tlf: 21 96 28 66</div>
+          <div>København, Danmark</div>
+        </div>
+        <p class="footer-copy">&copy; 2026 Mule Digital Solutions. Alle rettigheder forbeholdes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ─── Nav scroll effect + hamburger ───
+    const nav = document.getElementById('nav');
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile nav on link click
+    navMobile.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMobile.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ─── Intersection Observer animations ───
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    } else {
+      // Immediately show all animated elements if reduced motion
+      document.querySelectorAll('.fade-up, .hero-animate').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.animation = 'none';
+      });
+    }
+  </script>
+</body>
+</html>
