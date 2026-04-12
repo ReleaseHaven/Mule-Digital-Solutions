@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mule Digital Solutions – Hjemmesider & Google til lokale butikker i København</title>
+  <!-- deploy test: 2026-04-11 -->
   <meta name="description" content="Vi bygger hjemmesider og styrer Google Business Profiles for lokale butikker i København. Klar på få dage. Ring 21 96 28 66 for en uforpligtende snak." />
   <meta name="robots" content="index, follow" />
   <meta property="og:title" content="Mule Digital Solutions – Hjemmesider & Google til lokale butikker" />
@@ -105,12 +106,12 @@
       left: 0;
       right: 0;
       z-index: 100;
-      background: var(--navy);
-      border-bottom: 1px solid rgba(200,169,110,0.15);
+      background: var(--white);
+      border-bottom: 1px solid rgba(13,27,62,0.1);
       transition: box-shadow 0.3s;
     }
     .nav.scrolled {
-      box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+      box-shadow: 0 4px 24px rgba(13,27,62,0.1);
     }
     .nav-inner {
       display: flex;
@@ -125,7 +126,7 @@
       font-size: 1.05rem;
       font-weight: 700;
       letter-spacing: 0.08em;
-      color: var(--white);
+      color: var(--navy);
     }
     .nav-logo svg {
       width: 32px;
@@ -139,12 +140,12 @@
       list-style: none;
     }
     .nav-links a {
-      color: rgba(255,255,255,0.75);
+      color: rgba(13,27,62,0.6);
       font-size: 0.88rem;
       font-weight: 400;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--navy); }
     .btn-nav-cta {
       background: var(--navy);
       border: 1.5px solid var(--gold);
@@ -172,23 +173,23 @@
       display: block;
       width: 24px;
       height: 2px;
-      background: var(--white);
+      background: var(--navy);
       border-radius: 2px;
       transition: transform 0.3s, opacity 0.3s;
     }
     .nav-mobile {
       display: none;
-      background: var(--navy);
-      border-top: 1px solid rgba(255,255,255,0.08);
+      background: var(--white);
+      border-top: 1px solid rgba(13,27,62,0.08);
       padding: 16px 24px 20px;
     }
     .nav-mobile.open { display: block; }
     .nav-mobile a {
       display: block;
-      color: rgba(255,255,255,0.8);
+      color: rgba(13,27,62,0.7);
       font-size: 1rem;
       padding: 11px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(13,27,62,0.07);
     }
     .nav-mobile a:last-child { border-bottom: none; }
     .nav-mobile .btn-nav-cta {
@@ -224,12 +225,12 @@
     }
     .btn-outline {
       background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,0.5);
+      color: var(--navy);
+      border-color: rgba(13,27,62,0.4);
     }
     .btn-outline:hover {
-      border-color: var(--white);
-      background: rgba(255,255,255,0.08);
+      border-color: var(--navy);
+      background: rgba(13,27,62,0.06);
     }
     .btn-gold {
       background: var(--gold);
@@ -243,7 +244,7 @@
 
     /* ─── Hero ─── */
     .hero {
-      background: var(--navy);
+      background: var(--white);
       position: relative;
       overflow: hidden;
       padding: 152px 0 100px;
@@ -267,8 +268,8 @@
     }
     .hero-eyebrow {
       display: inline-block;
-      background: rgba(200,169,110,0.15);
-      color: var(--gold);
+      background: rgba(13,27,62,0.08);
+      color: var(--navy);
       font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.12em;
@@ -276,20 +277,20 @@
       padding: 6px 14px;
       border-radius: 4px;
       margin-bottom: 28px;
-      border: 1px solid rgba(200,169,110,0.3);
+      border: 1px solid rgba(13,27,62,0.2);
     }
     .hero h1 {
       font-size: clamp(2.4rem, 5.5vw, 4rem);
       font-weight: 700;
-      color: var(--white);
+      color: var(--navy);
       line-height: 1.12;
       margin-bottom: 24px;
       letter-spacing: -0.02em;
     }
-    .hero h1 .gold { color: var(--gold); }
+    .hero h1 .gold { color: var(--navy); }
     .hero-sub {
       font-size: clamp(1rem, 2.2vw, 1.2rem);
-      color: rgba(255,255,255,0.72);
+      color: rgba(13,27,62,0.65);
       max-width: 580px;
       font-weight: 300;
       margin-bottom: 44px;
@@ -314,15 +315,15 @@
     }
     .hero-scroll-hint span {
       font-size: 0.7rem;
-      color: var(--white);
+      color: var(--navy);
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
     .scroll-arrow {
       width: 20px;
       height: 20px;
-      border-right: 2px solid var(--white);
-      border-bottom: 2px solid var(--white);
+      border-right: 2px solid var(--navy);
+      border-bottom: 2px solid var(--navy);
       transform: rotate(45deg);
       animation: scrollBounce 1.5s ease-in-out infinite;
     }
