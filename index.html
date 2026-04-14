@@ -3,21 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mule Digital Solutions – Hjemmesider & Google til lokale butikker i København</title>
+  <title>Hjemmeside til din butik i København – Mule Digital Solutions</title>
   <meta name="description" content="Vi bygger hjemmesider og styrer Google Business Profiles for lokale butikker i København. Klar på få dage. Ring 21 96 28 66 for en uforpligtende snak." />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Mule Digital Solutions – Hjemmesider & Google til lokale butikker" />
+  <link rel="canonical" href="https://muledigital.dk/" />
+  <meta name="theme-color" content="#0d1b3e" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'><rect width='36' height='36' rx='8' fill='%230d1b3e'/><path d='M8 26 L8 10 L18 21 L28 10 L28 26' stroke='%23a3bfcb' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round' fill='none'/></svg>" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hjemmeside til din butik i København – Mule Digital Solutions" />
   <meta property="og:description" content="Vi bygger hjemmesider og styrer Google-profiler for lokale butikker i København – så dine kunder finder dig, ikke konkurrenten." />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://muledigital.dk/" />
   <meta property="og:locale" content="da_DK" />
+  <meta property="og:site_name" content="Mule Digital Solutions" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Hjemmeside til din butik i København – Mule Digital Solutions" />
+  <meta name="twitter:description" content="Vi bygger hjemmesider og styrer Google-profiler for lokale butikker i København – så dine kunder finder dig, ikke konkurrenten." />
+
+  <!-- Fonts (non-render-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" /></noscript>
 
+  <!-- Schema: LocalBusiness + ProfessionalService -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://muledigital.dk/#business",
     "name": "Mule Digital Solutions",
     "description": "Digitalt bureau der bygger hjemmesider og styrer Google Business Profiles for lokale butikker i København.",
     "telephone": "+4521962866",
@@ -27,10 +44,95 @@
       "addressLocality": "København",
       "addressCountry": "DK"
     },
-    "areaServed": "København",
+    "areaServed": {
+      "@type": "City",
+      "name": "København"
+    },
     "priceRange": "kr 500–2000/md",
+    "currenciesAccepted": "DKK",
     "vatID": "DK46313844",
-    "url": "https://muledigital.dk"
+    "url": "https://muledigital.dk",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+4521962866",
+      "email": "kontakt@muledigitalsolutions.com",
+      "contactType": "customer service",
+      "availableLanguage": "Danish",
+      "areaServed": "DK"
+    }
+  }
+  </script>
+
+  <!-- Schema: WebSite -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://muledigital.dk/#website",
+    "name": "Mule Digital Solutions",
+    "url": "https://muledigital.dk",
+    "inLanguage": "da-DK",
+    "publisher": {
+      "@id": "https://muledigital.dk/#business"
+    }
+  }
+  </script>
+
+  <!-- Schema: Service + Offers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": "https://muledigital.dk/#service",
+    "name": "Hjemmeside & Google Business til lokale butikker i København",
+    "description": "Vi bygger hjemmesider og styrer Google Business Profiles for lokale butikker i København – så dine kunder finder dig, ikke konkurrenten.",
+    "provider": { "@id": "https://muledigital.dk/#business" },
+    "areaServed": { "@type": "City", "name": "København" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Digitale løsninger",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Starter",
+          "description": "Professionel hjemmeside med hosting, SSL og løbende teknisk vedligeholdelse.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "500",
+            "priceCurrency": "DKK",
+            "unitText": "måned",
+            "billingDuration": "P1M"
+          },
+          "eligibleRegion": "København"
+        },
+        {
+          "@type": "Offer",
+          "name": "Synlighed",
+          "description": "Hjemmeside, Google Business Profile styring, håndtering af alle anmeldelser og månedlig rapport.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1200",
+            "priceCurrency": "DKK",
+            "unitText": "måned",
+            "billingDuration": "P1M"
+          },
+          "eligibleRegion": "København"
+        },
+        {
+          "@type": "Offer",
+          "name": "Fuld Digital Pakke",
+          "description": "Alt inkluderet: hjemmeside, Google, SEO-optimering, QR-stander, email marketing, løbende opdateringer og prioriteret support.",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "2000",
+            "priceCurrency": "DKK",
+            "unitText": "måned",
+            "billingDuration": "P1M"
+          },
+          "eligibleRegion": "København"
+        }
+      ]
+    }
   }
   </script>
 
@@ -756,6 +858,57 @@
       .contact-buttons .btn { width: 100%; max-width: 320px; }
       .footer-inner { flex-direction: column; align-items: flex-start; gap: 16px; }
     }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--white); }
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--gray-mid);
+    }
+    .faq-item:first-child { border-top: 1px solid var(--gray-mid); }
+    .faq-item summary {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.4;
+      user-select: none;
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary::after {
+      content: '';
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      border-right: 2px solid var(--accent-dark);
+      border-bottom: 2px solid var(--accent-dark);
+      transform: rotate(45deg) translateY(-4px);
+      transition: transform 0.3s cubic-bezier(0.22,1,0.36,1);
+    }
+    .faq-item[open] summary::after {
+      transform: rotate(-135deg) translateY(-4px);
+    }
+    .faq-item[open] summary {
+      color: var(--navy);
+    }
+    .faq-answer {
+      padding: 0 4px 22px;
+      font-size: 0.96rem;
+      color: #555;
+      line-height: 1.75;
+      font-weight: 300;
+    }
   </style>
 </head>
 <body>
@@ -774,6 +927,7 @@
         <li><a href="#how">Sådan fungerer det</a></li>
         <li><a href="#pricing">Løsninger</a></li>
         <li><a href="#features">Hvad er inkluderet</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contact" class="btn-nav-cta">Kontakt os</a></li>
       </ul>
       <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
@@ -784,6 +938,7 @@
       <a href="#how">Sådan fungerer det</a>
       <a href="#pricing">Løsninger & priser</a>
       <a href="#features">Hvad er inkluderet</a>
+      <a href="#faq">FAQ</a>
       <a href="#contact" class="btn-nav-cta">Kontakt os</a>
     </div>
   </nav>
@@ -1045,6 +1200,50 @@
     </div>
   </section>
 
+  <!-- ─── FAQ ─── -->
+  <section class="section faq" id="faq">
+    <div class="container">
+      <div class="section-header" style="text-align:center; margin-bottom:48px;">
+        <p class="section-label fade-up">Ofte stillede spørgsmål</p>
+        <h2 class="section-title fade-up delay-1">Har du spørgsmål?</h2>
+        <p class="section-sub fade-up delay-2" style="margin:0 auto;">Her finder du svar på de spørgsmål vi oftest får fra nye kunder.</p>
+      </div>
+      <div class="faq-list">
+
+        <details class="faq-item fade-up delay-1">
+          <summary>Hvad koster det at få lavet en hjemmeside?</summary>
+          <p class="faq-answer">Alle vores pakker inkluderer en engangspris på 8.000 kr. til opsætning. Derefter betaler du en månedlig pris der starter fra 500 kr./md for Starter-pakken. Vi er transparente om priser – der er ingen skjulte gebyrer, og du betaler ikke opsætningsprisen, før du har godkendt din hjemmeside.</p>
+        </details>
+
+        <details class="faq-item fade-up delay-2">
+          <summary>Hvad er Google Business Profile, og hvorfor er det vigtigt?</summary>
+          <p class="faq-answer">Google Business Profile er din virksomheds profil på Google – det er den boks med åbningstider, billeder, anmeldelser og kontaktinfo, der vises når folk søger efter din forretning. En velholdt profil er afgørende for lokal synlighed: kunder der søger "frisør i København" eller "restaurant nær mig" ser din profil, før de overhovedet besøger din hjemmeside. Vi opsætter og administrerer profilen for dig.</p>
+        </details>
+
+        <details class="faq-item fade-up delay-3">
+          <summary>Hvor hurtigt kan min hjemmeside gå live?</summary>
+          <p class="faq-answer">Fra vores første samtale til din side er live går der typisk kun få dage – aldrig mere end en uge. Vi arbejder hurtigt og viser dig siden til godkendelse undervejs. Vil du have ændringer, laver vi dem med det samme. Ingen betaling, før du er tilfreds.</p>
+        </details>
+
+        <details class="faq-item fade-up delay-4">
+          <summary>Hvad sker der hvis jeg vil lave ændringer på siden?</summary>
+          <p class="faq-answer">Du kontakter os bare – ring eller skriv. Vi har en fast kontaktperson til dig, og ændringer som nye billeder, opdaterede åbningstider eller ny tekst klarer vi hurtigt. I Fuld Digital Pakke er løbende opdateringer inkluderet i den månedlige pris. I Starter og Synlighed fakturerer vi efter forbrug ved større ændringer.</p>
+        </details>
+
+        <details class="faq-item fade-up delay-5">
+          <summary>Hvad er SEO-optimering, og hvad gør det for min forretning?</summary>
+          <p class="faq-answer">SEO (søgemaskineoptimering) er arbejdet med at få din hjemmeside til at rangere højere i Googles søgeresultater – organisk, uden betalt annoncering. Det handler om teknisk korrekt opbygning, relevante søgeord, hurtig indlæsning og god brugeroplevelse. Resultatet er at flere potentielle kunder finder dig, når de søger efter det du tilbyder i København.</p>
+        </details>
+
+        <details class="faq-item fade-up delay-6">
+          <summary>Kan jeg stoppe abonnementet?</summary>
+          <p class="faq-answer">Ja. Vores aftaler er uden binding – du kan opsige med én måneds varsel. Hvis du stopper, sørger vi for at du modtager alt materiale til din hjemmeside, så du kan videreføre den hos en anden udbyder. Vi tror på at gode resultater er den bedste grund til at blive.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- ─── Contact ─── -->
   <section class="contact" id="contact">
     <div class="container">
@@ -1079,7 +1278,7 @@
           <div>CVR: 46313844 &nbsp;·&nbsp; Tlf: 21 96 28 66</div>
           <div><a href="mailto:kontakt@muledigitalsolutions.com">kontakt@muledigitalsolutions.com</a></div>
         </div>
-        <p class="footer-copy">&copy; 2026 Mule Digital Solutions. Alle rettigheder forbeholdes.</p>
+        <p class="footer-copy">&copy; 2026 Mule Digital Solutions. Alle rettigheder forbeholdes.<br><a href="mailto:kontakt@muledigitalsolutions.com" style="color:rgba(255,255,255,0.35);text-decoration:underline;font-size:0.75rem;">Privatlivspolitik &amp; cookies</a></p>
       </div>
     </div>
   </footer>
