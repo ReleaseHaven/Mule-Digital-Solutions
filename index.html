@@ -488,10 +488,10 @@
     }
     .strip-inner {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      flex-wrap: wrap;
+      gap: 24px;
+      text-align: center;
     }
     .strip-label {
       font-size: 0.82rem;
@@ -499,7 +499,7 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #999;
-      max-width: 160px;
+      white-space: nowrap;
       line-height: 1.5;
     }
     .strip-stats {
@@ -1169,8 +1169,8 @@
 
         <!-- Left: text -->
         <div class="hero-content">
-          <h1 class="hero-animate delay-1">Din <span class="hero-word" id="heroWord">frisørsalon</span><br/>fortjener at blive fundet.</h1>
-          <p class="hero-sub hero-animate delay-2">Vi tager os af alt det digitale – hjemmeside, Google-tilstedeværelse og kundekontakt. Du fokuserer på din forretning og daglige drift. Vi tager os af resten.</p>
+          <h1 class="hero-animate delay-1">Din <span class="hero-word" id="heroWord">virksomhed</span><br/>fortjener at blive fundet.</h1>
+          <p class="hero-sub hero-animate delay-2">Vi tager os af alt det digitale – hjemmeside, Google-tilstedeværelse og kundekontakt. Du fokuserer på din forretning og daglige drift.</p>
           <div class="hero-buttons hero-animate delay-3">
             <a href="#pricing" class="btn btn-accent">Se vores løsninger</a>
             <a href="#contact" class="btn btn-outline">Kontakt os</a>
@@ -1212,7 +1212,7 @@
               <div class="svc-icon">
                 <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,15 7,9 11,12 18,4"/><polyline points="14,4 18,4 18,8"/></svg>
               </div>
-              <span>Google Kampagne</span>
+              <span>Online kampagner</span>
             </div>
           </div>
 
@@ -1221,7 +1221,7 @@
             <div class="hero-browser">
               <div class="browser-chrome">
                 <div class="browser-dots"><span></span><span></span><span></span></div>
-                <div class="browser-url">muledigital.dk</div>
+                <div class="browser-url">muledigitalsolutions.com</div>
               </div>
               <div class="browser-body">
                 <div class="site-navbar"></div>
@@ -1257,7 +1257,7 @@
         <p class="strip-label fade-up">Din digitale partner i København</p>
         <div class="strip-stats">
           <div class="strip-stat fade-up delay-1">
-            <strong>&lt; 1 uge</strong>
+            <strong>Under en uge</strong>
             <span>Fra aftale til online – typisk hurtigere</span>
           </div>
           <div class="strip-divider fade-up delay-1"></div>
@@ -1287,7 +1287,7 @@
         <div class="step fade-left delay-1">
           <div class="step-number">01</div>
           <h3>Vi bygger din hjemmeside</h3>
-          <p>Vi designer og bygger en professionel hjemmeside skræddersyet til netop din forretning – med tekst, billeder og det hele. Du behøver ikke løfte en finger eller tage stilling til det tekniske.</p>
+          <p>Vi designer og bygger en professionel hjemmeside skræddersyet til netop din forretning.</p>
           <div class="step-connector" aria-hidden="true">
             <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"/></svg>
           </div>
@@ -1303,7 +1303,7 @@
         <div class="step fade-right delay-3">
           <div class="step-number">03</div>
           <h3>Vi sætter det hele op og passer det løbende</h3>
-          <p>Siden går live. Vi håndterer hosting, sikkerhed og alle løbende opdateringer – du behøver aldrig røre det tekniske igen. Og vil du have noget ændret eller har du spørgsmål, kan du altid kontakte os for personlig betjening.</p>
+          <p>Siden går live. Vi håndterer hosting, sikkerhed og alle løbende opdateringer. Og vil du have noget ændret eller har du spørgsmål, kan du altid kontakte os for personlig betjening.</p>
         </div>
       </div>
     </div>
@@ -1432,7 +1432,7 @@
             </svg>
           </div>
           <h3>Hjemmeside lavet til jer</h3>
-          <p>Ingen generiske skabeloner. Vi laver en side der matcher din forretning, dine åbningstider og din tone of voice – og vi tager os af al tekst og alle billeder. Du skal bare godkende resultatet.</p>
+          <p>Ingen generiske skabeloner. Vi laver en side der matcher din forretning og dine åbningstider – og vi tager os af al tekst og alle billeder. Du skal bare godkende resultatet.</p>
         </div>
 
         <div class="feature-box fade-right delay-2">
@@ -1452,7 +1452,7 @@
             </svg>
           </div>
           <h3>Din faste kontaktperson – altid</h3>
-          <p>Du har altid én fast person at ringe eller skrive til. Ingen callcentre, ingen ventetid. Vil du have noget ændret, tilføjet eller har du bare et spørgsmål, er vi altid klar. Vi er et lille bureau der prioriterer at kende vores kunder.</p>
+          <p>Vi sætter stor fokus på personlig service. Du kan altid ringe eller sende en sms/email hvis du vil have noget ændret eller har spørgsmål.</p>
         </div>
 
         <div class="feature-box fade-right delay-4">
@@ -1496,7 +1496,7 @@
 
         <details class="faq-item fade-up delay-4">
           <summary>Hvad sker der hvis jeg vil lave ændringer på siden?</summary>
-          <p class="faq-answer">Du kontakter os bare – ring eller skriv. Vi har en fast kontaktperson til dig, og ændringer som nye billeder, opdaterede åbningstider eller ny tekst klarer vi hurtigt. I Fuld Digital Tilstedeværelse er løbende opdateringer inkluderet i den månedlige pris. I Basis og Synlighed fakturerer vi efter forbrug ved større ændringer.</p>
+          <p class="faq-answer">Du kontakter os bare – ring eller skriv. Ændringer som nye billeder, opdaterede åbningstider eller ny tekst klarer vi hurtigt. I Fuld Digital Tilstedeværelse er løbende opdateringer inkluderet i den månedlige pris. I Basis og Synlighed fakturerer vi efter forbrug ved større ændringer.</p>
         </details>
 
         <details class="faq-item fade-up delay-5">
@@ -1599,9 +1599,9 @@
     const heroWord = document.getElementById('heroWord');
     if (heroWord && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
       const words = [
-        'frisørsalon', 'restaurant', 'tøjbutik', 'tatovørsalon',
-        'café', 'blomsterhandel', 'bageri', 'vinbar',
-        'nagelstudio', 'hudplejeklinik'
+        'virksomhed', 'frisørsalon', 'restaurant', 'tøjbutik',
+        'tatovør', 'café', 'bageri', 'vinbar',
+        'nagelstudio', 'hudklinik'
       ];
       let idx = 0;
       setInterval(() => {
