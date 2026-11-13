@@ -1611,14 +1611,11 @@
       footerCopy.innerHTML = tr['footer.copy'] + '<br><a href="/privatlivspolitik" id="footer-privacy" style="color:rgba(255,255,255,0.35);text-decoration:underline;font-size:0.75rem;">' + tr['footer.privacy'] + '</a>';
     }
 
-    // Update hero word cycling array
-    if (typeof heroWords !== 'undefined') {
-      heroWords = tr.words;
-    }
-
-    // Update active word immediately
+    // Update hero word cycling array + active word
+    heroWords = tr.words;
+    heroWordIdx = 0;
     const heroWord = document.getElementById('heroWord');
-    if (heroWord && tr.words) heroWord.textContent = tr.words[0];
+    if (heroWord) heroWord.textContent = tr.words[0];
 
     // Update language switcher active state
     document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -1629,17 +1626,17 @@
     localStorage.setItem('mds_lang', lang);
   }
 
+  // ─── Declare cycling vars BEFORE first applyLang call ───
+  let heroWords = [];
+  let heroWordIdx = 0;
+
   // ─── Init ───
   const initLang = detectLang();
   applyLang(initLang);
 
   // ─── Language button events ───
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      applyLang(btn.dataset.lang);
-      // Re-trigger hero word cycling with new words
-      heroWordIdx = 0;
-    });
+    btn.addEventListener('click', () => applyLang(btn.dataset.lang));
   });
 
   // ════════════════════════════════════════════════════════
@@ -1691,8 +1688,6 @@
   // ════════════════════════════════════════════════════════
   //  HERO WORD CYCLING
   // ════════════════════════════════════════════════════════
-  let heroWords = T[initLang].words;
-  let heroWordIdx = 0;
   const heroWordEl = document.getElementById('heroWord');
 
   if (heroWordEl && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
