@@ -451,6 +451,24 @@
 
     /* ─── How it works ─── */
     .how { background: var(--gray-bg); }
+
+    /* ─── Features – dark section ─── */
+    .features { background: var(--navy); }
+    .features .section-label { color: var(--accent); opacity: 0.85; }
+    .features .section-title { color: #fff; }
+    .features .section-sub { color: rgba(255,255,255,0.65); }
+    .features .feature-box {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+    .features .feature-box:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(163,191,203,0.35);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    }
+    .features .feature-box h3 { color: #fff; }
+    .features .feature-box p { color: rgba(255,255,255,0.6); }
+    .features .feature-icon { background: rgba(163,191,203,0.12); }
     .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
     .step {
       position: relative;
@@ -704,7 +722,7 @@
       align-items: center;
       width: 100%;
     }
-    .hero-word { display: inline-block; color: var(--accent-dark); }
+    .hero-word { display: inline-block; color: var(--accent-dark); white-space: nowrap; }
     @media (prefers-reduced-motion: no-preference) {
       .hero-word { transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.22,1,0.36,1); }
       .hero-word.hw-out { opacity: 0; transform: translateY(-6px); }
