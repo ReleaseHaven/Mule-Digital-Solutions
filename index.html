@@ -1,35 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-words='[&quot;business&quot;, &quot;hair salon&quot;, &quot;nail salon&quot;, &quot;restaurant&quot;, &quot;café&quot;, &quot;bar&quot;, &quot;beauty clinic&quot;, &quot;tattoo studio&quot;, &quot;bike shop&quot;, &quot;bakery&quot;]' lang="en" data-lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script>document.documentElement.classList.add('i18n-pending');setTimeout(function(){document.documentElement.classList.remove('i18n-pending')},1500);</script>
+  <script>(function(){try{var h=document.documentElement;if(h.getAttribute('data-lang')!=='en'||location.pathname!=='/')return;var w=localStorage.getItem('mds_lang');if(!w){var l=String((navigator.languages&&navigator.languages[0])||navigator.language||'en').toLowerCase();w=l.indexOf('es')===0?'es':l.indexOf('da')===0?'da':'en';}if(w==='da'||w==='es')location.replace('/'+w+location.search+location.hash);}catch(e){}})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="page-title">Websites and Google for local businesses | Mule Digital Solutions</title>
-  <meta name="description" id="page-desc" content="We build websites and manage Google profiles for local businesses in Copenhagen and Buenos Aires. Ready in days, and you only pay once you have approved your site." />
+  <title>Websites for local businesses in Copenhagen | Mule Digital Solutions</title>
+  <meta name="description" content="We build websites and manage Google profiles for local businesses in Copenhagen. Ready in days, and you only pay once you have approved your site." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <link rel="canonical" href="https://www.muledigitalsolutions.com/" />
+  <link rel="alternate" hreflang="en" href="https://www.muledigitalsolutions.com/" />
+  <link rel="alternate" hreflang="da" href="https://www.muledigitalsolutions.com/da" />
+  <link rel="alternate" hreflang="es" href="https://www.muledigitalsolutions.com/es" />
+  <link rel="alternate" hreflang="x-default" href="https://www.muledigitalsolutions.com/" />
   <meta name="theme-color" content="#0d1b3e" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   <!-- Open Graph -->
-  <meta property="og:title" id="og-title" content="Websites and Google for local businesses | Mule Digital Solutions" />
-  <meta property="og:description" id="og-desc" content="We build websites and manage Google profiles for local businesses in Copenhagen and Buenos Aires." />
+  <meta property="og:title" content="Websites for local businesses in Copenhagen | Mule Digital Solutions" />
+  <meta property="og:description" content="We build websites and manage Google profiles for local businesses in Copenhagen. Ready in days, and you only pay once you have approved your site." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.muledigitalsolutions.com/" />
   <meta property="og:image" content="https://www.muledigitalsolutions.com/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Mule Digital Solutions" />
-  <meta property="og:locale" id="og-locale" content="en_US" />
-  <meta property="og:locale:alternate" content="da_DK" />
-  <meta property="og:locale:alternate" content="es_AR" />
+  <meta property="og:image:alt" content="Websites for local businesses in Copenhagen | Mule Digital Solutions" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:site_name" content="Mule Digital Solutions" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" id="tw-title" content="Websites and Google for local businesses | Mule Digital Solutions" />
-  <meta name="twitter:description" id="tw-desc" content="We build websites and manage Google profiles for local businesses in Copenhagen and Buenos Aires." />
+  <meta name="twitter:title" content="Websites for local businesses in Copenhagen | Mule Digital Solutions" />
+  <meta name="twitter:description" content="We build websites and manage Google profiles for local businesses in Copenhagen. Ready in days, and you only pay once you have approved your site." />
   <meta name="twitter:image" content="https://www.muledigitalsolutions.com/og-image.png" />
 
   <!-- Fonts (non-render-blocking) -->
@@ -75,7 +78,6 @@
 
   <style>
 
-    .i18n-pending body { visibility: hidden; }
 
     /* ─── Reset & Base ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -247,6 +249,7 @@
       transition: all 0.2s;
       line-height: 1;
     }
+    a.lang-btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; }
     .lang-btn:hover { color: var(--navy); background: rgba(13,27,62,0.05); }
     .lang-btn.active {
       color: var(--navy);
@@ -811,7 +814,7 @@
   <!-- ─── Navigation ─── -->
   <nav class="nav" id="nav">
     <div class="container nav-inner">
-      <a href="#top" class="nav-logo" aria-label="Mule Digital Solutions">
+      <a href="/" class="nav-logo" aria-label="Mule Digital Solutions">
         <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="36" height="36" rx="8" fill="#0d1b3e"/>
           <path d="M8 26 L8 10 L18 21 L28 10 L28 26" stroke="#a3bfcb" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -825,9 +828,9 @@
         <li><a href="#contact" class="btn-nav-cta" data-i18n="nav.cta">Contact us</a></li>
       </ul>
       <div class="lang-switcher" role="group" aria-label="Language">
-        <button type="button" class="lang-btn" data-lang="en" lang="en">EN</button>
-        <button type="button" class="lang-btn" data-lang="da" lang="da">DA</button>
-        <button type="button" class="lang-btn" data-lang="es" lang="es">ES</button>
+        <a class="lang-btn active" href="/" data-lang="en" aria-current="page" hreflang="en" lang="en">EN</a>
+        <a class="lang-btn" href="/da" data-lang="da" hreflang="da" lang="da">DA</a>
+        <a class="lang-btn" href="/es" data-lang="es" hreflang="es" lang="es">ES</a>
       </div>
       <button type="button" class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navMobile">
         <span></span><span></span><span></span>
@@ -872,7 +875,7 @@
           <p class="hero-sub hero-animate delay-2" data-i18n="hero.sub">We take care of everything digital: your website, your Google profile and your reviews. You take care of your business.</p>
           <div class="hero-buttons hero-animate delay-3">
             <a href="#services" class="btn btn-accent" data-i18n="hero.btn1">See our solutions</a>
-            <a href="https://wa.me/4521962866" class="btn btn-outline wa-link" target="_blank" rel="noopener">
+            <a href="https://wa.me/4521962866?text=Hi%21%20I%27d%20like%20to%20hear%20what%20you%20can%20do%20for%20my%20business." class="btn btn-outline wa-link" target="_blank" rel="noopener">
               <svg class="btn-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 01-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.43 9.43 0 01-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 016.7 2.78 9.4 9.4 0 012.77 6.7c0 5.22-4.25 9.47-9.47 9.47zm8.06-17.53A11.33 11.33 0 0012.04.63C5.76.63.65 5.74.65 12.02c0 2 .53 3.96 1.52 5.69L.55 23.6l6.03-1.58a11.35 11.35 0 005.45 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
               <span data-i18n="hero.btn2">Write on WhatsApp</span>
             </a>
@@ -940,7 +943,7 @@
   <section class="strip" aria-label="Mule Digital Solutions">
     <div class="container">
       <div class="strip-inner">
-        <p class="strip-label fade-up" data-i18n="strip.label">Your digital partner in Copenhagen and Buenos Aires</p>
+        <p class="strip-label fade-up" data-i18n="strip.label">Your digital partner in Copenhagen</p>
         <div class="strip-stats">
           <div class="strip-stat fade-up delay-1">
             <strong data-i18n="strip.s1strong">Under a week</strong>
@@ -1051,7 +1054,7 @@
         </details>
         <details class="faq-item fade-up delay-2">
           <summary data-i18n="faq2.q">What is a Google Business Profile, and why does it matter?</summary>
-          <p class="faq-answer" data-i18n="faq2.a">It's the box on Google and Google Maps with your opening hours, photos, reviews and contact details. When people search for "hairdresser near me", they see your profile before your website. A profile with fresh photos and many good reviews gets more calls and more visits.</p>
+          <p class="faq-answer" data-i18n="faq2.a">It's the box on Google and Google Maps with your opening hours, photos, reviews and contact details. When people search for &quot;hairdresser near me&quot;, they see your profile before your website. A profile with fresh photos and many good reviews gets more calls and more visits.</p>
         </details>
         <details class="faq-item fade-up delay-3">
           <summary data-i18n="faq3.q">How quickly can my website go live?</summary>
@@ -1080,7 +1083,7 @@
       <h2 class="section-title fade-up delay-1" data-i18n="contact.title">Ready to be found?</h2>
       <p class="contact-sub fade-up delay-2" data-i18n="contact.sub">Write or call us for a no-obligation chat about what we can do for your business. No sales pressure and no technical jargon.</p>
       <div class="contact-buttons fade-up delay-3">
-        <a href="https://wa.me/4521962866" class="btn btn-accent wa-link" target="_blank" rel="noopener">
+        <a href="https://wa.me/4521962866?text=Hi%21%20I%27d%20like%20to%20hear%20what%20you%20can%20do%20for%20my%20business." class="btn btn-accent wa-link" target="_blank" rel="noopener">
           <svg class="btn-wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 01-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.43 9.43 0 01-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47a9.4 9.4 0 016.7 2.78 9.4 9.4 0 012.77 6.7c0 5.22-4.25 9.47-9.47 9.47zm8.06-17.53A11.33 11.33 0 0012.04.63C5.76.63.65 5.74.65 12.02c0 2 .53 3.96 1.52 5.69L.55 23.6l6.03-1.58a11.35 11.35 0 005.45 1.39h.01c6.28 0 11.39-5.11 11.39-11.39 0-3.04-1.18-5.9-3.33-8.05z"/></svg>
           <span>WhatsApp</span>
         </a>
@@ -1114,9 +1117,9 @@
           <div><a href="mailto:kontakt@muledigitalsolutions.com">kontakt@muledigitalsolutions.com</a></div>
         </div>
         <div class="footer-copy">
-          <span data-i18n="footer.copy">© 2026 Mule Digital Solutions. Copenhagen and Buenos Aires.</span>
+          <span data-i18n="footer.copy">© 2026 Mule Digital Solutions · Copenhagen</span>
           <div class="footer-links">
-            <a href="/privatlivspolitik" data-i18n="footer.privacy">Privacy policy and cookies</a>
+            <a href="/privatlivspolitik?lang=en" data-i18n="footer.privacy">Privacy policy and cookies</a>
             <button type="button" id="cookieSettings" data-i18n="footer.cookies">Cookie settings</button>
           </div>
         </div>
@@ -1126,14 +1129,13 @@
 
   <!-- ─── Cookie consent ─── -->
   <div class="consent" id="consent" role="dialog" aria-live="polite" aria-labelledby="consentText">
-    <p id="consentText"><span data-i18n="consent.text">We'd like to use Google Analytics to see how many people visit the site. It's only switched on if you accept.</span> <a href="/privatlivspolitik" data-i18n="consent.more">Read more</a></p>
+    <p id="consentText"><span data-i18n="consent.text">We'd like to use Google Analytics to see how many people visit the site. It's only switched on if you accept.</span> <a href="/privatlivspolitik?lang=en" data-i18n="consent.more">Read more</a></p>
     <div class="consent-actions">
       <button type="button" class="btn btn-primary" id="consentAccept" data-i18n="consent.accept">Accept</button>
       <button type="button" class="btn btn-outline" id="consentDecline" data-i18n="consent.decline">Decline</button>
     </div>
   </div>
 
-  <script src="/i18n.js"></script>
   <script src="/site.js"></script>
 </body>
 </html>

@@ -2,12 +2,12 @@
 window.MDS_T = {
   en: {
     meta: {
-      title: 'Websites and Google for local businesses | Mule Digital Solutions',
-      desc:  'We build websites and manage Google profiles for local businesses in Copenhagen and Buenos Aires. Ready in days, and you only pay once you have approved your site.',
+      title: 'Websites for local businesses in Copenhagen | Mule Digital Solutions',
+      desc:  'We build websites and manage Google profiles for local businesses in Copenhagen. Ready in days, and you only pay once you have approved your site.',
       ogLocale: 'en_US', lang: 'en'
     },
     words: ['business', 'hair salon', 'nail salon', 'restaurant', 'café', 'bar', 'beauty clinic', 'tattoo studio', 'bike shop', 'bakery'],
-    wa: 'Hi Mule Digital Solutions! I would like to hear more about a website for my business.',
+    wa: "Hi! I'd like to hear what you can do for my business.",
     'nav.how': 'How it works',
     'nav.services': 'Solutions',
     'nav.faq': 'FAQ',
@@ -21,7 +21,7 @@ window.MDS_T = {
     'svc.website': 'Website',
     'svc.reviews': 'Reviews',
     'svc.seo': 'Local SEO',
-    'strip.label': 'Your digital partner in Copenhagen and Buenos Aires',
+    'strip.label': 'Your digital partner in Copenhagen',
     'strip.s1strong': 'Under a week',
     'strip.s1span': 'From agreement to online',
     'strip.s2strong': 'Personal',
@@ -72,7 +72,7 @@ window.MDS_T = {
     'contact.sub': 'Write or call us for a no-obligation chat about what we can do for your business. No sales pressure and no technical jargon.',
     'contact.email': 'Email us',
     'contact.note': 'We answer in English, Danish and Spanish.',
-    'footer.copy': '© 2026 Mule Digital Solutions. Copenhagen and Buenos Aires.',
+    'footer.copy': '© 2026 Mule Digital Solutions · Copenhagen',
     'footer.privacy': 'Privacy policy and cookies',
     'footer.cookies': 'Cookie settings',
     'consent.text': "We'd like to use Google Analytics to see how many people visit the site. It's only switched on if you accept.",
@@ -83,12 +83,12 @@ window.MDS_T = {
 
   da: {
     meta: {
-      title: 'Hjemmeside og Google til lokale forretninger | Mule Digital Solutions',
-      desc:  'Vi bygger hjemmesider og passer Google-profiler for lokale forretninger i København og Buenos Aires. Klar på få dage, og du betaler først, når du har godkendt siden.',
+      title: 'Hjemmesider til lokale forretninger i København | Mule Digital Solutions',
+      desc:  'Vi bygger hjemmesider og passer Google-profiler for lokale forretninger i København. Klar på få dage, og du betaler først, når du har godkendt siden.',
       ogLocale: 'da_DK', lang: 'da'
     },
     words: ['forretning', 'frisørsalon', 'neglesalon', 'restaurant', 'café', 'bar', 'skønhedsklinik', 'tatovør', 'cykelhandler', 'bager'],
-    wa: 'Hej Mule Digital Solutions! Jeg vil gerne høre mere om en hjemmeside til min forretning.',
+    wa: 'Hej! Jeg vil gerne høre, hvad I kan gøre for min forretning.',
     'nav.how': 'Sådan virker det',
     'nav.services': 'Løsninger',
     'nav.faq': 'FAQ',
@@ -102,7 +102,7 @@ window.MDS_T = {
     'svc.website': 'Hjemmeside',
     'svc.reviews': 'Anmeldelser',
     'svc.seo': 'Lokal SEO',
-    'strip.label': 'Din digitale partner i København og Buenos Aires',
+    'strip.label': 'Din digitale partner i København',
     'strip.s1strong': 'Under en uge',
     'strip.s1span': 'Fra aftale til online',
     'strip.s2strong': 'Personligt',
@@ -153,7 +153,7 @@ window.MDS_T = {
     'contact.sub': 'Skriv eller ring for en uforpligtende snak om, hvad vi kan gøre for din forretning. Intet salgspres og intet teknisk sprog.',
     'contact.email': 'Send en mail',
     'contact.note': 'Vi svarer på dansk, engelsk og spansk.',
-    'footer.copy': '© 2026 Mule Digital Solutions. København og Buenos Aires.',
+    'footer.copy': '© 2026 Mule Digital Solutions · København',
     'footer.privacy': 'Privatlivspolitik og cookies',
     'footer.cookies': 'Cookieindstillinger',
     'consent.text': 'Vi vil gerne bruge Google Analytics til at se, hvor mange der besøger siden. Det slås kun til, hvis du accepterer.',
@@ -164,12 +164,12 @@ window.MDS_T = {
 
   es: {
     meta: {
-      title: 'Página web y Google para negocios locales | Mule Digital Solutions',
-      desc:  'Hacemos páginas web y manejamos tu perfil de Google para que tus clientes te encuentren. Buenos Aires y Copenhague. Lista en días y pagás recién cuando la aprobás.',
+      title: 'Páginas web para negocios en Buenos Aires | Mule Digital Solutions',
+      desc:  'Página web y perfil de Google para tu negocio en Buenos Aires, para que tus clientes te encuentren primero. Lista en días y pagás recién cuando la aprobás.',
       ogLocale: 'es_AR', lang: 'es-AR'
     },
     words: ['negocio', 'salón de uñas', 'local', 'centro de estética', 'restaurante', 'bar', 'café', 'spa', 'estudio de tatuajes', 'gimnasio'],
-    wa: '¡Hola Mule Digital Solutions! Quiero saber más sobre una página web para mi negocio.',
+    wa: '¡Hola! Me gustaría saber qué pueden hacer por mi negocio.',
     'nav.how': 'Cómo funciona',
     'nav.services': 'Soluciones',
     'nav.faq': 'Preguntas',
@@ -234,7 +234,7 @@ window.MDS_T = {
     'contact.sub': 'Escribinos o llamanos y charlamos sin compromiso sobre lo que podemos hacer por tu negocio. Sin presión y sin palabras técnicas.',
     'contact.email': 'Mandanos un mail',
     'contact.note': 'Te respondemos en español, inglés y danés.',
-    'footer.copy': '© 2026 Mule Digital Solutions. Buenos Aires y Copenhague.',
+    'footer.copy': '© 2026 Mule Digital Solutions · Buenos Aires y Copenhague',
     'footer.privacy': 'Política de privacidad y cookies',
     'footer.cookies': 'Configurar cookies',
     'consent.text': 'Nos gustaría usar Google Analytics para saber cuánta gente visita la página. Solo se activa si lo aceptás.',

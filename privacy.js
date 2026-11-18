@@ -18,6 +18,8 @@
     try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; }
   }
   function detect() {
+    var q = (location.search.match(/[?&]lang=(da|en|es)\b/) || [])[1];
+    if (q) return q;
     var saved = store('mds_lang');
     if (saved && TITLES[saved]) return saved;
     var l = String((navigator.languages && navigator.languages[0]) || navigator.language || 'en').toLowerCase();
@@ -38,7 +40,9 @@
       b.classList.toggle('active', on);
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    document.getElementById('backLink').textContent = BACK[l];
+    var back = document.getElementById('backLink');
+    back.textContent = BACK[l];
+    back.href = { da: '/da', en: '/', es: '/es' }[l];
   }
   apply(detect());
   document.documentElement.classList.remove('i18n-pending');

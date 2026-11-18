@@ -1,84 +1,25 @@
 /* Mule Digital Solutions - site behaviour */
 (function () {
   'use strict';
-  var T = window.MDS_T;
   var GA_ID = 'G-RDGVVFPQ6P';
-  var WA_NUMBER = '4521962866';
+  var html = document.documentElement;
 
   function store(key, val) {
     try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; }
   }
 
   // ─── Language ───
-  // A saved choice (from clicking EN/DA/ES) wins. Otherwise the browser decides:
-  // Spanish only for es-* browsers, Danish for da-*, English for everyone else.
-  function detectLang() {
-    var saved = store('mds_lang');
-    if (saved && T[saved]) return saved;
-    var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
-    var first = String(langs[0] || 'en').toLowerCase();
-    if (first.indexOf('es') === 0) return 'es';
-    if (first.indexOf('da') === 0) return 'da';
-    return 'en';
-  }
+  // Each language has its own URL (/, /da, /es) so Google indexes all three.
+  // On the front page only: a saved choice wins, otherwise the browser decides
+  // (Spanish only for es-* browsers, Danish for da-*, English for everyone else).
+  // (The front-page redirect for da/es browsers runs inline in <head> to avoid a flash.)
+  document.querySelectorAll('.lang-btn').forEach(function (a) {
+    a.addEventListener('click', function () { store('mds_lang', a.getAttribute('data-lang')); });
+  });
 
   var heroWords = [];
+  try { heroWords = JSON.parse(html.getAttribute('data-words') || '[]'); } catch (e) { heroWords = []; }
   var heroWordIdx = 0;
-  var currentLang = 'en';
-
-  function setMeta(id, val, attr) {
-    var el = document.getElementById(id);
-    if (el) el[attr || 'content'] = val;
-  }
-
-  function applyLang(lang) {
-    var tr = T[lang];
-    if (!tr) return;
-    currentLang = lang;
-    document.documentElement.lang = tr.meta.lang;
-    document.title = tr.meta.title;
-    setMeta('page-desc', tr.meta.desc);
-    setMeta('og-title', tr.meta.title);
-    setMeta('og-desc', tr.meta.desc);
-    setMeta('og-locale', tr.meta.ogLocale);
-    setMeta('tw-title', tr.meta.title);
-    setMeta('tw-desc', tr.meta.desc);
-
-    document.querySelectorAll('[data-i18n]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n');
-      if (tr[key] !== undefined) el.textContent = tr[key];
-    });
-    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
-      var key = el.getAttribute('data-i18n-html');
-      if (tr[key] !== undefined) el.innerHTML = tr[key];
-    });
-
-    var waHref = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(tr.wa);
-    document.querySelectorAll('.wa-link').forEach(function (a) { a.href = waHref; });
-
-    heroWords = tr.words;
-    heroWordIdx = 0;
-    var hw = document.getElementById('heroWord');
-    if (hw) hw.textContent = heroWords[0];
-
-    document.querySelectorAll('.lang-btn').forEach(function (btn) {
-      var on = btn.getAttribute('data-lang') === lang;
-      btn.classList.toggle('active', on);
-      btn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    });
-  }
-
-  applyLang(detectLang());
-  document.documentElement.classList.remove('i18n-pending');
-
-  document.querySelectorAll('.lang-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var lang = btn.getAttribute('data-lang');
-      store('mds_lang', lang);
-      applyLang(lang);
-      closeMenu();
-    });
-  });
 
   // ─── Nav ───
   var nav = document.getElementById('nav');
@@ -117,7 +58,7 @@
 
   // ─── Hero word cycling ───
   var heroWordEl = document.getElementById('heroWord');
-  if (heroWordEl && motionOK) {
+  if (heroWordEl && motionOK && heroWords.length > 1) {
     setInterval(function () {
       heroWordEl.classList.add('hw-out');
       setTimeout(function () {
